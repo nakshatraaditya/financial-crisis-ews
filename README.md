@@ -77,11 +77,9 @@ Performance is reported using complementary metrics:
 ### 7) Interpretability
 SHAP-style explanations are used to quantify feature contributions:
 - global importance (mean absolute SHAP)
-- local explanations for pre-crisis periods
 
 An **ablation study** tests whether performance depends on specific feature families (macro vs behavioural) and whether missingness indicators materially contribute.
 
 ---
 
-## Repository Structure (suggested)
 
