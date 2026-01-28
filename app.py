@@ -9,7 +9,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
-# Optional Altair (recommended)
+
 try:
     import altair as alt
     ALTAIR_OK = True
@@ -204,7 +204,7 @@ def confusion_heatmap(cm: np.ndarray, title: str):
         ax.set_title(title)
         st.pyplot(fig, clear_figure=True)
 
-# --- Altair risk timeline with crisis bands + markers
+# risk timeline with crisis bands + markers
 def altair_risk_with_crisis_bands_and_markers(risk_df, crisis_df, title, threshold=None):
     domain, range_colors = build_color_scale(risk_df["country"].unique())
 
@@ -252,7 +252,7 @@ def altair_risk_with_crisis_bands_and_markers(risk_df, crisis_df, title, thresho
 
     return alt.layer(*layers).properties(height=360, title=title).interactive()
 
-# --- Matplotlib fallback
+# Matplotlib fallback
 def matplotlib_risk_chart_with_crises(risk_df: pd.DataFrame, threshold: float, title: str):
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.set_title(title)
@@ -438,7 +438,7 @@ def build_model_set():
 
 
 # =============================================================================
-# TRAIN/EVAL — fixed model (default Logistic Regression), fixed VAL threshold
+# TRAIN/EVAL 
 # =============================================================================
 def train_eval_budgeted_fixed_model(
     df_target: pd.DataFrame,
@@ -543,7 +543,7 @@ def validation_model_comparison(df_target: pd.DataFrame, base_features: List[str
 
 
 # =============================================================================
-# ROBUSTNESS (on-demand)
+# ROBUSTNESS 
 # =============================================================================
 def robustness_horizon(df_clean: pd.DataFrame, base_features: List[str], budget: float, model_name: str):
     rows = []
@@ -566,7 +566,7 @@ def robustness_budget(df_target: pd.DataFrame, base_features: List[str], horizon
     return pd.DataFrame(rows)
 
 # =============================================================================
-# ABLATION (on-demand)
+# ABLATION 
 # =============================================================================
 def run_ablation(df_target, macro_features, behav_features, budget=0.20):
     results = []
@@ -626,7 +626,7 @@ def run_ablation(df_target, macro_features, behav_features, budget=0.20):
 
 
 # =============================================================================
-# SHAP (on-demand)
+# SHAP 
 # =============================================================================
 def shap_supported(model_name: str) -> bool:
     return model_name in ["Logistic Regression", "Random Forest", "Gradient Boosting"]
@@ -680,7 +680,7 @@ def compute_shap_artifacts(
 
 
 # =============================================================================
-# CORE PIPELINE (cached)
+# CORE PIPELINE 
 # =============================================================================
 @st.cache_data(show_spinner=False)
 def build_main_bundle(xlsx_path: str, horizon: int, budget: float, model_name: str):
