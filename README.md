@@ -103,4 +103,26 @@ Reported metrics include:
 ---
 
 ## Repository Structure
+├── app.py # Streamlit dashboard (interactive EWS)
+├── JSTdatasetR6.xlsx 
+├── requirements.txt 
+├── 240377687_Nakshatra_Aditya.ipynb
+└── README.md
 
+---
+
+## Running the Dashboard Locally
+
+The project includes an interactive **Streamlit dashboard** for exploring crisis risk, alerts, robustness checks, ablation results, and SHAP explanations.
+
+### Prerequisites
+- **Python 3.9+**
+- Git
+- JST Macrohistory Database (Release 6)
+
+### Setup Instructions
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/-An-Early-Warning-System-for-Systemic-Banking-Crises-.git
+cd -An-Early-Warning-System-for-Systemic-Banking-Crises-
