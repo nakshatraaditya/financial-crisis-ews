@@ -104,8 +104,7 @@ Reported metrics include:
 
 ## Repository Structure
 ├── app.py # Streamlit dashboard (interactive EWS)
-
-├── JSTdatasetR6.xlsx 
+  -── JSTdatasetR6.xlsx 
 
 ├── requirements.txt 
 
