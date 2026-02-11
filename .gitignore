@@ -18,3 +18,7 @@ models/
 # OS
 .DS_Store
 
+data/
+*.egg-info/
+__pycache__/
+*.pyc
